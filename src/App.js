@@ -1,11 +1,17 @@
 import React from "react";
-
 import "./App.css";
+import Sidebar from "./Components/Sidebar";
 
 function App() {
   return (
     <div className="app">
-      <h1>WhatsApp with mern</h1>
+      <div className="app_body">
+        <Sidebar />
+        <div>
+          This is the chat
+          {/* <Chat /> */}
+        </div>
+      </div>
     </div>
   );
 }
