@@ -43,9 +43,10 @@ db.once("open", () => {
 
     if (change.operationType === "insert") {
       const messageDetails = change.fullDocument;
-      pusher.trigger("messages", "incerted", {
+      pusher.trigger("messages", "inserted", {
         name: messageDetails.name,
         message: messageDetails.message,
+        timestamp: messageDetails.timestamp,
       });
     } else {
       console.log("Error trigering Pusher");
