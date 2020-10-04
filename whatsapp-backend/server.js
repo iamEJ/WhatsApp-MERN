@@ -8,10 +8,12 @@ import cors from "cors";
 // app config
 const app = express();
 const port = process.env.PORT || 9000;
+
+//pusher info
 const pusher = new Pusher({
-  appId: "1084385",
-  key: "aecbddf8ae851a695716",
-  secret: "950bc44927a8fc92e98b",
+  appId: "",
+  key: "",
+  secret: "",
   cluster: "eu",
   encrypted: true,
 });
@@ -22,8 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 // DB config
-const connection_url =
-  "mongodb+srv://admin:9MLTGErvUeWEKDHP@cluster0.yyetf.mongodb.net/whatsapp-mern?retryWrites=true&w=majority";
+const connection_url = "mongodbURL"; // get from mongodb
 
 mongoose.connect(connection_url, {
   useCreateIndex: true,
